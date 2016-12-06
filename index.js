@@ -19,6 +19,7 @@ var search = require('./routes/search');
 var signup = require('./routes/signup');
 var status = require('./routes/status');
 var user = require('./routes/user');
+var rate = require('./routes/rates');
 var watchlist = require('./routes/watchlists');
 
 var app = express();
@@ -31,7 +32,7 @@ var corsOptions = {
 var tokenSecret = 'UBEAT_TOKEN_SECRET' || process.env.TOKEN_SECRET;
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');3
 app.set('jwtTokenSecret', tokenSecret);
 
 require('./middleware/passport')(passport, app);
@@ -93,6 +94,12 @@ app.delete('/watchlists/:id/movies/:trackId', authentication.isAuthenticated, wa
 app.put('/watchlists/:id', authentication.isAuthenticated, watchlist.updateWatchlist);
 app.delete('/watchlists/:id', authentication.isAuthenticated, watchlist.removeWatchlist);
 
+app.get('/rates/:trackId', authentication.isAuthenticated, rate.getRates)
+app.post('/rates/:trackId', authentication.isAuthenticated, rate.createRate)
+app.delete('/rates/:id', authentication.isAuthenticated, rate.deleteRate)
+app.put('/rates/:id', authentication.isAuthenticated, rate.editRate)
+
+
 // Unsecure API. Useful for the second release.
 
 app.get('/unsecure/genres/movies', genres.getMoviesGenres);
@@ -124,6 +131,7 @@ app.post('/unsecure/watchlists/:id/movies', watchlist.addMovieToWatchlist);
 app.delete('/unsecure/watchlists/:id/movies/:trackId', watchlist.removeMovieFromWatchlist);
 app.put('/unsecure/watchlists/:id', watchlist.updateWatchlist);
 app.delete('/unsecure/watchlists/:id', watchlist.removeWatchlistUnsecure);
+
 
 var port = process.env.PORT || 3000;
 app.listen(port);

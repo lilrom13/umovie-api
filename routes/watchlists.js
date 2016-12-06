@@ -4,7 +4,7 @@ var Movie = require('../models/movie').model;
 var _ = require('underscore');
 
 exports.addMovieToWatchlist = function (req, res) {
-    Watchlist.findById(req.params.id, function (err, watchlist) {
+     Watchlist.findById(req.params.id, function (err, watchlist) {
         if (!err) {
             if (watchlist) {
                 if (req.body) {
