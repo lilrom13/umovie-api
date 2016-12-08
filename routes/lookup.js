@@ -34,3 +34,10 @@ exports.getTvShowEpisodes = function (req, res) {
         entity: 'tvEpisode'
     }, res, 'many');
 };
+
+exports.getFeaturedMovies = function(req, res) {
+    res.send({
+            count: 3,
+            trackId: ['265727087', '265727087', '265727087']
+        })
+};

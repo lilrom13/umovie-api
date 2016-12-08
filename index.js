@@ -62,6 +62,9 @@ app.get('/welcome', signup.welcome);
 app.get('/token', login.getToken);
 app.get('/tokenInfo', authentication.isAuthenticated, login.getToken);
 
+app.get('/featuredMovies', lookup.getFeaturedMovies);
+
+
 // Secure API
 
 app.get('/genres/movies', authentication.isAuthenticated, genres.getMoviesGenres);
