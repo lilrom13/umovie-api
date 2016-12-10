@@ -98,7 +98,7 @@ app.put('/watchlists/:id', authentication.isAuthenticated, watchlist.updateWatch
 app.delete('/watchlists/:id', authentication.isAuthenticated, watchlist.removeWatchlist);
 
 app.get('/rates/:trackId', authentication.isAuthenticated, rate.getRates)
-app.post('/rates/:trackId', authentication.isAuthenticated, rate.createRate)
+app.post('/rates', authentication.isAuthenticated, rate.createRate)
 app.delete('/rates/:id', authentication.isAuthenticated, rate.deleteRate)
 app.put('/rates/:id', authentication.isAuthenticated, rate.editRate)
 
