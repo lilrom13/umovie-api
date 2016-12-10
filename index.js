@@ -62,6 +62,9 @@ app.get('/welcome', signup.welcome);
 app.get('/token', login.getToken);
 app.get('/tokenInfo', authentication.isAuthenticated, login.getToken);
 
+app.get('/featuredMovies', lookup.getFeaturedMovies);
+
+
 // Secure API
 
 app.get('/genres/movies', authentication.isAuthenticated, genres.getMoviesGenres);
@@ -95,7 +98,7 @@ app.put('/watchlists/:id', authentication.isAuthenticated, watchlist.updateWatch
 app.delete('/watchlists/:id', authentication.isAuthenticated, watchlist.removeWatchlist);
 
 app.get('/rates/:trackId', authentication.isAuthenticated, rate.getRates)
-app.post('/rates/:trackId', authentication.isAuthenticated, rate.createRate)
+app.post('/rates', authentication.isAuthenticated, rate.createRate)
 app.delete('/rates/:id', authentication.isAuthenticated, rate.deleteRate)
 app.put('/rates/:id', authentication.isAuthenticated, rate.editRate)
 
