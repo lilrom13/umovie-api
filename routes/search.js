@@ -48,3 +48,37 @@ exports.searchActor = function (req, res) {
         limit: req.query.limit || 10
     }, res);
 };
+
+exports.getFeaturedActionMovies = function (req, res) {
+    itunes.search({
+        term: 'movie',
+        media: 'movie',
+        genreId: 4401,
+        limit: 3
+    }, res);
+};
+
+exports.getFeaturedHorrorMovies = function (req, res) {
+    itunes.search({
+        term: 'movie',
+        media: 'movie',
+        genreId: 4408,
+        limit: 3
+    }, res);
+};
+
+exports.getFeaturedRealityTvshows = function (req, res) {
+    itunes.search({
+        term: 'tvShow',
+        genreId: 4007,
+        limit: 3
+    }, res);
+};
+
+exports.getFeaturedCommedyTvshows = function (req, res) {
+    itunes.search({
+        term: 'tvShow',
+        genreId: 4000,
+        limit: 3
+    }, res);
+};

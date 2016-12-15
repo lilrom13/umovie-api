@@ -63,7 +63,14 @@ app.get('/token', login.getToken);
 app.get('/tokenInfo', authentication.isAuthenticated, login.getToken);
 
 app.get('/featuredMovies', lookup.getFeaturedMovies);
+app.get('/featuredActionMovies', search.getFeaturedActionMovies);
+app.get('/featuredHorrorMovies', search.getFeaturedHorrorMovies);
 
+app.get('/featuredTvshows', lookup.getFeaturedTvshows);
+app.get('/featuredRealityTvshows', search.getFeaturedRealityTvshows);
+app.get('/getFeaturedCommedyTvshows', search.getFeaturedCommedyTvshows);
+
+app.get('/featuredActors', lookup.getFeaturedActors)
 
 // Secure API
 
