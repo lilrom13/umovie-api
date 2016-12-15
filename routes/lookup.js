@@ -41,3 +41,17 @@ exports.getFeaturedMovies = function(req, res) {
             trackId: ['265727087', '265727087', '265727087']
         })
 };
+
+exports.getFeaturedTvshows = function(req, res) {
+    res.send({
+        count: 3,
+        trackId: ['168268985', '168268985', '168268985']
+    })
+};
+
+exports.getFeaturedActors = function(req, res) {
+    res.send({
+        count: 3,
+        trackId: ['253584821', '253584821', '253584821']
+    })
+};
