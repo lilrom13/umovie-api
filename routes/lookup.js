@@ -38,20 +38,20 @@ exports.getTvShowEpisodes = function (req, res) {
 exports.getFeaturedMovies = function(req, res) {
     res.send({
             count: 3,
-            trackId: ['265727087', '265727087', '265727087']
+            trackId: ['265727087', '1078111961', '1134823596']
         })
 };
 
 exports.getFeaturedTvshows = function(req, res) {
     res.send({
         count: 3,
-        trackId: ['168268985', '168268985', '168268985']
+        trackId: ['465754521', '686765477', '168268985']
     })
 };
 
 exports.getFeaturedActors = function(req, res) {
     res.send({
         count: 3,
-        trackId: ['253584821', '253584821', '253584821']
+        trackId: ['272994458', '279372425', '628845', '189031776', '131136696', '427420961']
     })
 };
